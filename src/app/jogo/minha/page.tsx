@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
 import { Suspense } from "react";
 import CustomGame from "@/components/CustomGame";
+import { pageMetadata } from "@/lib/og";
 
-export const metadata: Metadata = { title: "Minha música" };
+export const metadata = pageMetadata("/jogo/minha");
 
 export default function Page() {
   return (

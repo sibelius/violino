@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
 import Tuner from "@/components/Tuner";
+import { pageMetadata } from "@/lib/og";
 
-export const metadata: Metadata = { title: "Afinador" };
+export const metadata = pageMetadata("/afinador");
 
 export default function Page() {
   return <Tuner />;

@@ -2,15 +2,21 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Fraunces } from "next/font/google";
 import Link from "next/link";
 import VolumeControl from "@/components/VolumeControl";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/og";
 import "./globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 const fraunces = Fraunces({ variable: "--font-fraunces", subsets: ["latin"] });
 
+const title = "Violino — Afinador & Jogo";
+
 export const metadata: Metadata = {
-  title: { default: "Violino — Afinador & Jogo", template: "%s · Violino" },
-  description: "Afinador de violino e jogo estilo Guitar Hero que escuta seu violino, com o repertório Suzuki volumes 1 a 5.",
+  metadataBase: new URL(SITE_URL),
+  title: { default: title, template: "%s · Violino" },
+  description: SITE_DESCRIPTION,
+  openGraph: { title, description: SITE_DESCRIPTION, url: "/", siteName: SITE_NAME, type: "website", locale: "pt_BR" },
+  twitter: { card: "summary_large_image", title, description: SITE_DESCRIPTION },
 };
 
 export const viewport: Viewport = { themeColor: "#120d0a" };

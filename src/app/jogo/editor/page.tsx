@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
 import { Suspense } from "react";
 import Editor from "@/components/Editor";
+import { pageMetadata } from "@/lib/og";
 
-export const metadata: Metadata = { title: "Editor" };
+export const metadata = pageMetadata("/jogo/editor");
 
 export default function Page() {
   return (
